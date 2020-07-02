@@ -51,8 +51,8 @@ export class SeguradoraComponent implements OnInit {
   }
 
   // copia o usuario para ser editado.
-  editUser(useguradora: Seguradora) {
-    this.seguradora = { ...this.seguradora };
+  editSeg(seguradora: Seguradora) {
+    this.seguradora = { ...seguradora };
   }
 
   // limpa o formulario

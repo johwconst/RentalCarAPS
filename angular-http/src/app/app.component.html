@@ -1,11 +1,29 @@
-<h1>Locadora OneCar</h1>
-<nav>
-  <a routerLink="/usuario">Usuario</a>
-  <H1></H1>
-  <a routerLink="/veiculo">Veiculo</a>
-  <H1></H1>
-  <a routerLink="/seguradora">Seguradora</a>
-  <H1></H1>
-  <a routerLink="/aluguel">Locacao</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/home">
+    <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    OneCar
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/usuario">Usuarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/veiculo">Veiculos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/seguradora">Seguradora</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/aluguel">Aluguel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ajuda</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 <router-outlet></router-outlet>
