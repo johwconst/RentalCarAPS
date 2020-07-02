@@ -9,7 +9,7 @@ import { Seguradora } from '../models/seguradora';
 })
 export class  SeguradoraService {
 
-  url = 'http://127.0.0.1:8000/api/seguradora'; // api rest backend
+  url = 'http://127.0.0.1:8000/api/seguradora/'; // api rest backend
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -56,7 +56,7 @@ export class  SeguradoraService {
 
   // deleta uma seguradora
   deleteSeg(seguradora: Seguradora) {
-    return this.httpClient.delete<Seguradora>(this.url + '/' + seguradora.id, this.httpOptions)
+    return this.httpClient.delete<Seguradora>(this.url + seguradora.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

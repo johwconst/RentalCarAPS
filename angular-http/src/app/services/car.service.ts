@@ -9,7 +9,7 @@ import { Car } from '../models/car';
 })
 export class CarService {
 
-  url = 'http://127.0.0.1:8000/api/veiculo'; // api rest backend
+  url = 'http://127.0.0.1:8000/api/veiculo/'; // api rest backend
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -56,7 +56,7 @@ export class CarService {
 
   // deleta um carro
   deleteCar(car: Car) {
-    return this.httpClient.delete<Car>(this.url + '/' + car.id, this.httpOptions)
+    return this.httpClient.delete<Car>(this.url + car.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

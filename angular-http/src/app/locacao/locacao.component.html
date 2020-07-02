@@ -1,1 +1,52 @@
-<p>locacao works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Gerenciamento de Usuarios</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de Alugueis</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Status</th>
+                <th scope="col">Veiculo</th>
+                <th scope="col">Seguradora</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Tipo de Aluguel</th>
+                <th scope="col">Data de retira</th>
+                <th scope="col">Loca de retira</th>
+                <th scope="col">Data devolução</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Cupom</th>
+                <th scope="col">Contrato</th>
+                <th scope="col">Observacao</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let locacao of locacaos">
+                <td>{{locacao.id}}</td>
+                <td>{{locacao.status}}</td>
+                <td>{{locacao.veiculo}}</td>
+                <td>{{locacao.seguradora}}</td>
+                <td>{{locacao.cliente}}</td>
+                <td>{{locacao.tipo}}</td>
+                <td>{{locacao.data_de_retirada}}</td>
+                <td>{{locacao.local_de_retirada}}</td>
+                <td>{{locacao.data_de_devolucao}}</td>
+                <td>{{locacao.valor_aluguel}}</td>
+                <td>{{locacao.cupom}}</td>
+                <td>{{locacao.numero_contrato}}</td>
+                <td>{{locacao.observacao}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning btn-sm" (click)="editLoc(locacao)">Editar</button>
+                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteLoc(locacao)">Deletar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+ 

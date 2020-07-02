@@ -9,7 +9,7 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  url = 'http://127.0.0.1:8000/api/cliente'; // api rest backend
+  url = 'http://127.0.0.1:8000/api/cliente/'; // api rest backend
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -56,7 +56,7 @@ export class UsuarioService {
 
   // deleta um usuario
   deleteUser(usuario: Usuario) {
-    return this.httpClient.delete<Usuario>(this.url + '/' + usuario.id, this.httpOptions)
+    return this.httpClient.delete<Usuario>(this.url + usuario.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
