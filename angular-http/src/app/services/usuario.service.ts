@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Car } from '../models/car';
+import { Usuario } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CarService {
+export class UsuarioService {
 
-  url = 'http://127.0.0.1:8000/api/veiculo'; // api rest backend
+  url = 'http://127.0.0.1:8000/api/cliente'; // api rest backend
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -19,44 +19,44 @@ export class CarService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  // Obtem todos os carros
-  getCars(): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(this.url)
+  // Obtem todos os usuarios
+  getUsers(): Observable<Usuario[]> {
+    return this.httpClient.get<Usuario[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
 
-  // Obtem um carro pelo id
-  getCarById(id: number): Observable<Car> {
-    return this.httpClient.get<Car>(this.url + '/' + id)
+  // Obtem um Usuario pelo id
+  getUserById(id: number): Observable<Usuario> {
+    return this.httpClient.get<Usuario>(this.url + '/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // salva um carro
-  saveCar(car: Car): Observable<Car> {
-    return this.httpClient.post<Car>(this.url, JSON.stringify(car), this.httpOptions)
+  // salva um Usuario
+  saveUser(usuario: Usuario): Observable<Usuario> {
+    return this.httpClient.post<Usuario>(this.url, JSON.stringify(usuario), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // utualiza um carro
-  updateCar(car: Car): Observable<Car> {
-    return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.httpOptions)
+  // utualiza um usuario
+  updateUser(usuario: Usuario): Observable<Usuario> {
+    return this.httpClient.put<Usuario>(this.url + '/' + usuario.id, JSON.stringify(usuario), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
 
-  // deleta um carro
-  deleteCar(car: Car) {
-    return this.httpClient.delete<Car>(this.url + '/' + car.id, this.httpOptions)
+  // deleta um usuario
+  deleteUser(usuario: Usuario) {
+    return this.httpClient.delete<Usuario>(this.url + '/' + usuario.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

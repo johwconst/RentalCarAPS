@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CarService } from './services/car.service';
+import { CarService } from 'src/app/services/car.service';
+import { Car } from 'src/app/models/car';
 import { NgForm } from '@angular/forms';
-import { Car } from './models/car';
 
 @Component({
   selector: 'app-root',

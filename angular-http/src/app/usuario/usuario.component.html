@@ -1,0 +1,54 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Gerenciamento de Usuarios</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de Usuarios</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Nome Completo</th>
+                <th scope="col">CPF/CNPJ</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Tipo Endereço</th>
+                <th scope="col">UF</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">CEP</th>
+                <th scope="col">Rua</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Complemento</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of usuarios">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.tipo}}</td>
+                <td>{{usuario.nome_completo}}</td>
+                <td>{{usuario.cpf_cnpj}}</td>
+                <td>{{usuario.emai}}</td>
+                <td>{{usuario.telefone}}</td>
+                <td>{{usuario.tipo_endereco}}</td>
+                <td>{{usuario.uf}}</td>
+                <td>{{usuario.cidade}}</td>
+                <td>{{usuario.cep}}</td>
+                <td>{{usuario.rua}}</td>
+                <td>{{usuario.numero}}</td>
+                <td>{{usuario.bairro}}</td>
+                <td>{{usuario.complemento}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning btn-sm" (click)="editUser(usuario)">Editar</button>
+                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteUser(usuario)">Deletar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+ 

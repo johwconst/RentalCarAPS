@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { CarService } from './services/car.service';
+import { CarService } from 'src/app/services/car.service';
+import { Car } from 'src/app/models/car';
 import { NgForm } from '@angular/forms';
-import { Car } from './models/car';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'veiculo-root',
+  templateUrl: './veiculo.component.html',
+  styleUrls: ['./veiculo.component.css']
 })
-export class AppComponent implements OnInit {
+export class VeiculoComponent implements OnInit {
 
   car = {} as Car;
   cars: Car[];
