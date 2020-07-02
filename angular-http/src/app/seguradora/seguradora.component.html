@@ -1,1 +1,41 @@
-<p>seguradora works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Gerenciamento de Usuarios</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de Seguradoras</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Tipo Seguro</th>
+                <th scope="col">Contrato ID</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let seguradora of seguradoras">
+                <td>{{seguradora.id}}</td>
+                <td>{{seguradora.nome}}</td>
+                <td>{{seguradora.cnpj}}</td>
+                <td>{{seguradora.email}}</td>
+                <td>{{seguradora.emai}}</td>
+                <td>{{seguradora.telefone}}</td>
+                <td>{{seguradora.tipo_de_seguro}}</td>
+                <td>{{seguradora.id_contrato}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning btn-sm" (click)="editSeg(seguradora)">Editar</button>
+                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteSeg(seguradora)">Deletar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+ 

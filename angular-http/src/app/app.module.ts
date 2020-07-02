@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { UsuarioComponent } from 'src/app/usuario/usuario.component';
 import { VeiculoComponent } from './veiculo/veiculo.component';
 import { SeguradoraComponent } from './seguradora/seguradora.component';
+import { LocacaoComponent } from './locacao/locacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
     VeiculoComponent,
-    SeguradoraComponent
+    SeguradoraComponent,
+    LocacaoComponent
   ],
   imports: [
     BrowserModule,
