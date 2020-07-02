@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UsuarioComponent } from 'src/app/usuario/usuario.component';
 import { VeiculoComponent } from './veiculo/veiculo.component';
+import { SeguradoraComponent } from './seguradora/seguradora.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
-    VeiculoComponent
+    VeiculoComponent,
+    SeguradoraComponent
   ],
   imports: [
     BrowserModule,
