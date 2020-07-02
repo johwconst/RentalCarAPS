@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LocacaoService } from "src/app/services/locacao.service";
 import { Locacao } from "src/app/models/locacao";
+import { CarService } from "src/app/services/car.service";
+import { UsuarioService } from "src/app/services/usuario.service";
+import { SeguradoraService } from "src/app/services/seguradora.service";
+import { SeguradoraComponent } from '../seguradora/seguradora.component';
 
 @Component({
   selector: 'app-locacao',
