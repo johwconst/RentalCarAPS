@@ -5,3 +5,9 @@ class SegSerializer(serializers.ModelSerializer):
     class Meta:
         model = Seg
         fields = '__all__'
+
+class SegNamesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Seg
+        fields = ('id', 'nome')
+

@@ -5,3 +5,7 @@ from . import serializers
 class SegViewset(viewsets.ModelViewSet):
     queryset = models.Seg.objects.all()
     serializer_class = serializers.SegSerializer
+
+class SegNamesViewset(viewsets.ModelViewSet):
+    queryset = models.Seg.objects.all()
+    serializer_class = serializers.SegNamesSerializer

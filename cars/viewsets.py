@@ -5,3 +5,7 @@ from . import serializers
 class CarViewset(viewsets.ModelViewSet):
     queryset = models.Car.objects.all()
     serializer_class = serializers.CarSerializer
+
+class CarNamesViewset(viewsets.ModelViewSet):
+    queryset = models.Car.objects.all()
+    serializer_class = serializers.CarNamesSerializer
