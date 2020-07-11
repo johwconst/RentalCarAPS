@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CarService } from 'src/app/services/car.service';
 import { Car } from 'src/app/models/car';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'veiculo-root',
@@ -33,7 +34,7 @@ export class VeiculoComponent implements OnInit {
   }
 
   // Chama o serviço para obtém todos os carros
-  getCars() {
+  getCars(){
     this.carService.getCars().subscribe((cars: Car[]) => {
       this.cars = cars;
     });

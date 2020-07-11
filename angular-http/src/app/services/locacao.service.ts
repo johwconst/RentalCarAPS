@@ -3,6 +3,9 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Locacao } from "src/app/models/locacao";
+import { Usuario } from '../models/usuario';
+import { Car } from '../models/car';
+import { Seguradora } from "../models/seguradora";
 
 
 @Injectable({
@@ -12,6 +15,10 @@ import { Locacao } from "src/app/models/locacao";
 export class LocacaoService {
 
   url = 'http://127.0.0.1:8000/api/locacao/'; // api rest backend
+  url_clientes = 'http://127.0.0.1:8000/api/clienteNames/';
+  url_veiculos = 'http://127.0.0.1:8000/api/carNames/';
+  url_seguradora = 'http://127.0.0.1:8000/api/segNames/';
+
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -27,6 +34,27 @@ export class LocacaoService {
       .pipe(
         retry(2),
         catchError(this.handleError))
+  }
+
+  getClienteNames(): Observable<Usuario[]> { 
+    return this.httpClient.get<Usuario[]>(this.url_clientes)
+      .pipe(
+        retry(2),
+        catchError(this.handleError))
+  }
+
+  getCarNames(): Observable<Car[]> {
+    return this.httpClient.get<Car[]>(this.url_veiculos)
+    .pipe(
+      retry(2),
+      catchError(this.handleError))
+  }
+
+  getSegNames(): Observable<Seguradora[]> {
+    return this.httpClient.get<Seguradora[]>(this.url_seguradora)
+    .pipe(
+      retry(2),
+      catchError(this.handleError))
   }
 
   // Obtem uma locação pelo id
@@ -49,7 +77,7 @@ export class LocacaoService {
 
   // utualiza uma seguradora
   updateLoc(locacao: Locacao): Observable<Locacao> {
-    return this.httpClient.put<Locacao>(this.url + '/' + locacao.id, JSON.stringify(locacao), this.httpOptions)
+    return this.httpClient.put<Locacao>(this.url + locacao.id + '/', JSON.stringify(locacao), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

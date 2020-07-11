@@ -6,7 +6,7 @@ export interface Locacao {
     cliente: string;
     tipo: string;
     data_de_retirada: string;
-    local_de_retirada: string;
+    local_de_retira: string;
     data_de_devolucao: string;
     valor_aluguel: string;
     cupom: string;
