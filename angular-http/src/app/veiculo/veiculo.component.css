@@ -1,5 +1,5 @@
 .container {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .add-car {
@@ -7,7 +7,8 @@
 }
 
 .list-car {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    font-size: 12px;
 }
 
 .btn-add-car {
