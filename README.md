@@ -6,6 +6,7 @@ Projeto crud de locadora desenvolvido para APS-18B7
 
 #### Necessario:
 _Node 10.16.0+_
+
 _Yarn 1.16.0+_
 
 Python embeded já incluso no projeto. 
