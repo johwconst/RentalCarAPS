@@ -12,4 +12,4 @@ Python embeded já incluso no projeto.
 
 #### Executando:
 
-Abra o arquivo start_backend.bat e após executar o arquivo start_front.bat, após a execução sucedida dos dois abrir no navegador o endereço http://127.0.0.1:4200
+Abra o arquivo ***start_backend.bat*** e após executar o arquivo ***start_front.bat***, após a execução sucedida dos dois abrir no navegador o endereço http://127.0.0.1:4200
