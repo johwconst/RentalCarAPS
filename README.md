@@ -1,4 +1,4 @@
-# PIRATES LOCADORA
+# CRUD Desenvolvido em Angular + Django Rest Framework
 
 Projeto crud de locadora desenvolvido para APS-18B7
 
